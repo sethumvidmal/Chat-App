@@ -1,3 +1,3 @@
 public interface Observer {
-    public void setMessage(String message);
+    public void setMessage(String senderName, String message);
 }
