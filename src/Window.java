@@ -4,7 +4,7 @@ import java.awt.*;
 public class Window extends JFrame implements Observer{
     private JButton btnSend = new JButton();
     private JTextField message = new JTextField();
-    private JTextArea display = new JTextArea();
+    private static JTextArea display = new JTextArea();
 
     public Window(String title){
         setTitle(title);
@@ -38,6 +38,6 @@ public class Window extends JFrame implements Observer{
 
     @Override
     public void setMessage(String message) {
-        display.append(message);
+        display.append(message+"\n");
     }
 }

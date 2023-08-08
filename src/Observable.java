@@ -7,7 +7,7 @@ public class Observable{
         }
         return instance;
     }
-    Observer observerArray [] = new Observer[0];
+    static Observer observerArray [] = new Observer[0];
     private void extendArrays(){
         Observer [] tempObserverArray = new Observer[observerArray.length+1];
         for(int i = 0; i < observerArray.length; i++){
@@ -16,11 +16,13 @@ public class Observable{
         observerArray = tempObserverArray;
     }
     public static void getMessage(String message) {
-
-        notifyMessage();
+        notifyMessage(message);
     }
 
-    public static void notifyMessage() {
+    public static void notifyMessage(String message) {
+        for(int i = 0; i < observerArray.length; i++){
+            observerArray[2].setMessage(message);
+        }
     }
     public void setOb(Observer observer){
         extendArrays();
